@@ -16,15 +16,19 @@ const CreateBlog = () => {
     formData.append("content", content);
     formData.append("image", image);
     try {
-      await axios.post("http://localhost:5000/api/bloggy/create", formData, {
-        headers: { "Content-Type": "multipart/formdata" },
-      });
+      await axios.post(
+        "https://bloggy-api.up.railway.app/api/bloggy/create",
+        formData,
+        {
+          headers: { "Content-Type": "multipart/formdata" },
+        }
+      );
 
       console.log("Data has been Created !");
       setTitle("");
       setContent("");
       setImage("");
-      redirect("/blogs");
+      window.location.replace("https://bloggy-client.vercel.app/");
     } catch (error) {
       console.log(error.message);
     }
