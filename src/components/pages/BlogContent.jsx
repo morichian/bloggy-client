@@ -17,7 +17,9 @@ const BlogContent = ({ title, blogimage, content, id, blogs }) => {
       dangerMode: true,
     }).then((willDelete) => {
       if (willDelete) {
-        axios.delete(`https://bloggy-api.up.railway.app/api/bloggy/${id}`);
+        axios.delete(
+          `https://bloggy-api-production.up.railway.app/api/bloggy/${id}`
+        );
         console.log("Deleted");
         swal("Poof! Your imaginary file has been deleted!", {
           icon: "success",
@@ -38,7 +40,7 @@ const BlogContent = ({ title, blogimage, content, id, blogs }) => {
       <div className="content">
         <div className="imageHolder">
           <img
-            src={`https://bloggy-api.up.railway.app/${blogimage}`}
+            src={`https://bloggy-api-production.up.railway.app/${blogimage}`}
             alt={title}
           />
         </div>

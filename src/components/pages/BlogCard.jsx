@@ -5,7 +5,10 @@ const BlogCard = ({ homeImage, id, name }) => {
     <section className="blogCard">
       <div className="imgBlog">
         <Link to={`${id}`}>
-          <img src={`http://localhost:5000/${homeImage}`} alt={name} />
+          <img
+            src={`https://bloggy-api-production.up.railway.app/${homeImage}`}
+            alt={name}
+          />
         </Link>
       </div>
       <div className="discover">
