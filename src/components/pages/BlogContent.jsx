@@ -21,10 +21,13 @@ const BlogContent = ({ title, blogimage, content, id, blogs }) => {
           `https://bloggy-api-production.up.railway.app/api/bloggy/${id}`
         );
         console.log("Deleted");
+
         swal("Poof! Your imaginary file has been deleted!", {
           icon: "success",
         });
-        window.location.replace("https://bloggy-client.vercel.app/");
+        setTimeout(() => {
+          window.location.replace("https://bloggy-client.vercel.app/");
+        }, 2000);
       } else {
         swal("Your imaginary file is safe!");
         console.log("Not Deleted");
