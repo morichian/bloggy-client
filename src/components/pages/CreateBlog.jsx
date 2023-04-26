@@ -16,9 +16,13 @@ const CreateBlog = () => {
     formData.append("content", content);
     formData.append("image", image);
     try {
-      await axios.post("http://localhost:5000/api/bloggy/create", formData, {
-        headers: { "Content-Type": "multipart/formdata" },
-      });
+      await axios.post(
+        "https://bloggy-api-production.up.railway.app/api/bloggy/create",
+        formData,
+        {
+          headers: { "Content-Type": "multipart/formdata" },
+        }
+      );
 
       console.log("Data has been Created !");
       setTitle("");
