@@ -18,7 +18,7 @@ const EditBlog = ({ id, title, content, image }) => {
     formData.append("image", newImage);
     try {
       const response = await axios.put(
-        `http://localhost:5000/api/bloggy/${id}`,
+        `https://bloggy-api-production.up.railway.app/api/bloggy/${id}`,
         formData,
         {
           headers: { "Content-Type": "multipart/form-data" },
@@ -29,7 +29,7 @@ const EditBlog = ({ id, title, content, image }) => {
       console.log("upadted !");
       swal("Blog get Updated");
       setTimeout(() => {
-        window.location.replace("http://localhost:3000/");
+        window.location.replace("https://bloggy-client.vercel.app/");
       }, 2000);
     } catch (error) {
       console.log(error.message);
