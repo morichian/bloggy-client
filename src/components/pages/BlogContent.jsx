@@ -17,15 +17,16 @@ const BlogContent = ({ title, blogimage, content, id, blogs }) => {
       dangerMode: true,
     }).then((willDelete) => {
       if (willDelete) {
-        axios.delete(`http://localhost:5000/api/bloggy/${id}`);
+        axios.delete(
+          `https://bloggy-api-production.up.railway.app/api/bloggy/${id}`
+        );
         console.log("Deleted");
 
         swal("Poof! Your imaginary file has been deleted!", {
           icon: "success",
         });
-        window.location.replace("http://localhost:3000");
         setTimeout(() => {
-          window.location.replace("https://bloggy.molaraiche.com/");
+          window.location.replace("https://bloggy-client.vercel.app/");
         }, 2000);
       } else {
         swal("Your imaginary file is safe!");

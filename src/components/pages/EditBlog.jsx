@@ -29,7 +29,7 @@ const EditBlog = ({ id, title, content, image }) => {
       console.log("upadted !");
       swal("Blog get Updated");
       setTimeout(() => {
-        window.location.replace("http://localhost:3000");
+        window.location.replace("https://bloggy-client.vercel.app/");
       }, 2000);
     } catch (error) {
       console.log(error.message);
