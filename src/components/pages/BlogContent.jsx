@@ -17,14 +17,12 @@ const BlogContent = ({ title, blogimage, content, id, blogs }) => {
       dangerMode: true,
     }).then((willDelete) => {
       if (willDelete) {
-        axios.delete(
-          `https://bloggy-api-production.up.railway.app/api/bloggy/${id}`
-        );
+        axios.delete(`http://localhost:5000/api/bloggy/${id}`);
         console.log("Deleted");
         swal("Poof! Your imaginary file has been deleted!", {
           icon: "success",
         });
-        window.location.replace("https://bloggy-client.vercel.app/");
+        window.location.replace("http://localhost:3000");
       } else {
         swal("Your imaginary file is safe!");
         console.log("Not Deleted");
@@ -39,10 +37,7 @@ const BlogContent = ({ title, blogimage, content, id, blogs }) => {
       <h1>{title}</h1>
       <div className="content">
         <div className="imageHolder">
-          <img
-            src={`https://bloggy-api-production.up.railway.app/${blogimage}`}
-            alt={title}
-          />
+          <img src={`http://localhost:5000/${blogimage}`} alt={title} />
         </div>
         <p>{content}</p>
       </div>

@@ -6,9 +6,7 @@ import "./styles/style.css";
 const App = () => {
   const [blogs, setBlogs] = useState([]);
   const getData = async () => {
-    const response = await axios.get(
-      "https://bloggy-api-production.up.railway.app/api/bloggy"
-    );
+    const response = await axios.get("http://localhost:5000/api/bloggy");
     const data = await response.data;
     setBlogs(data.response);
   };
