@@ -17,9 +17,7 @@ const BlogContent = ({ title, blogimage, content, id, blogs }) => {
       dangerMode: true,
     }).then((willDelete) => {
       if (willDelete) {
-        axios.delete(
-          `https://bloggy-api-production.up.railway.app/api/bloggy/${id}`
-        );
+        axios.delete(`http://localhost:5000/api/bloggy/${id}`);
         console.log("Deleted");
 
         swal("Poof! Your imaginary file has been deleted!", {
