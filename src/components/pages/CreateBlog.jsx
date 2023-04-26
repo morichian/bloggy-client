@@ -28,7 +28,7 @@ const CreateBlog = () => {
       setTitle("");
       setContent("");
       setImage("");
-      window.location.replace("https://bloggy-client.vercel.app/");
+      window.location.replace("https://bloggy.molaraiche.com/");
     } catch (error) {
       console.log(error.message);
     }

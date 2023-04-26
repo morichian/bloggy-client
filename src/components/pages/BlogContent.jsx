@@ -26,7 +26,7 @@ const BlogContent = ({ title, blogimage, content, id, blogs }) => {
           icon: "success",
         });
         setTimeout(() => {
-          window.location.replace("https://bloggy-client.vercel.app/");
+          window.location.replace("https://bloggy.molaraiche.com/");
         }, 2000);
       } else {
         swal("Your imaginary file is safe!");
